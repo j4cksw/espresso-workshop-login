@@ -11,6 +11,7 @@ public class ServiceProvider {
    public ServiceProvider(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(LoginAPIEndpoint.BASE_URL)
+                .client(RestAdapter.getUnsafeOkHttpClient().build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
